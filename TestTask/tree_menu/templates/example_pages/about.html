@@ -1,0 +1,14 @@
+{% extends 'tree_menu/base.html' %}
+{% load menu_tags %}
+
+{% block menu %}
+    <div class="row">
+        <div class="col-2">{% draw_menu 'main_menu' request %}</div>
+
+{% endblock %}
+
+{% block content %}
+        <div class="col text-center"><h1>About page</h1></div>
+        <div class="col-2">{% draw_menu 'about' request %}</div>
+    </div>
+{% endblock %}

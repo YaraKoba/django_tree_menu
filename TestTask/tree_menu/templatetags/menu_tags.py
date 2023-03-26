@@ -53,5 +53,4 @@ def render_menu_items(menu_items, path):
 
             parent_item['children'].append(menu_dict[name])
 
-    print(menu_tree)
     return menu_tree
