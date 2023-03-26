@@ -1,14 +1,33 @@
 {% extends 'tree_menu/base.html' %}
 {% load menu_tags %}
 
-{% block menu %}
-    <div class="row">
+{% block content %}
+    <div class="row g-0">
         <div class="col-2">{% draw_menu 'main_menu' request %}</div>
 
-{% endblock %}
-
-{% block content %}
-        <div class="col text-center"><h1>About page</h1></div>
+        <div class="col">
+            <header class="masthead text-center text-white">
+                <div class="masthead-content">
+                    <div class="container px-5">
+                        <h1 class="masthead-heading mb-0">About page</h1>
+                        <h2 class="masthead-subheading mb-0">The conditions of the test task</h2>
+                    </div>
+                </div>
+            </header>
+            <section id="scroll">
+                    <div class="p-5">
+                        <h2 class="display-4">Все условия выполнены</h2>
+                        <p>1) Меню реализовано через template tag <br>
+                            2) Все, что над выделенным пунктом - развернуто. Первый уровень вложенности под выделенным пунктом тоже развернут.<br>
+                            3) Хранится в БД sqlith3.<br>
+                            4) Редактируется в стандартной админке Django<br>
+                            5) Активный пункт меню определяется исходя из URL текущей страницы<br>
+                            6 )Меню на одной странице может быть несколько. Они определяются по названию.<br>
+                            7) При клике на меню происходит переход по заданному в нем URL. URL может быть задан как явным образом, так и через named url.<br>
+                            8)На отрисовку каждого меню требуется ровно 1 запрос к БД
+                            </p>
+            </section>
+        </div>
         <div class="col-2">{% draw_menu 'about' request %}</div>
     </div>
 {% endblock %}

@@ -9,9 +9,9 @@ def index(request, *args, **kwargs):
     elif request.path == '/main_menu/about/':
         file = 'example_pages/about.html'
     else:
-        file = 'tree_menu/index.html'
+        file = 'example_pages/any.html'
     return render(request, file)
 
 
 def hello_page(request, *args, **kwargs):
-    pass
+    return render(request, 'example_pages/hello_page.html')

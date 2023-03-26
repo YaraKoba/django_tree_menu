@@ -7,8 +7,9 @@ register = template.Library()
 @register.inclusion_tag('tree_menu/nav_bar.html')
 def draw_menu(menu, request):
     menu_items = MenuItem.objects.filter(group__name=menu)
-    d = render_menu_items(menu_items, request.path)
-    return {'item': d, 'menu': menu, 'request': request}
+    dict_children = render_menu_items(menu_items, request.path)
+
+    return {'item': dict_children, 'menu': menu}
 
 
 def render_menu_items(menu_items, path):
@@ -27,9 +28,12 @@ def render_menu_items(menu_items, path):
                     'url': url,
                     'is_active': False,
                     'href': item.get_url(),
+                    'current': False,
                     'children': [],
                      }
+
         if path == menu_item['href']:
+            menu_item['current'] = True
             menu_item['is_active'] = True
 
         menu_dict[name] = menu_item

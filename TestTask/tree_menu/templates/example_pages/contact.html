@@ -1,13 +1,18 @@
 {% extends 'tree_menu/base.html' %}
 {% load menu_tags %}
-
-{% block menu %}
-    <div class="row">
-        <div class="col-2">{% draw_menu 'main_menu' request %}</div>
-
-{% endblock %}
-
 {% block content %}
-        <div class="col text-center"><h1>Contact page</h1></div>
+
+
+    <div class="row g-0">
+        <div class="col-2">{% draw_menu 'main_menu' request %}</div>
+        <div class="col text-center">
+            <header class="masthead text-center text-white">
+                <div class="masthead-content">
+                    <div class="container px-5">
+                        <h1 class="masthead-heading mb-0">Contact page</h1>
+                    </div>
+                </div>
+            </header>
+        </div>
     </div>
 {% endblock %}

@@ -1,8 +1,13 @@
 
-<ul class="list-group">
-  <li class="list-group-item list-group-item-success"><h2>{{menu}}</h2></li>
-  {% include 'tree_menu/children.html' %}
-</ul>
+
+<div class="tree_menu">
+    <ul class="list-group">
+        <a href="/" class="list-group-item list-group-item-action list-group-item-danger"><h2>{{menu}}</h2></a>
+
+        {% include 'tree_menu/children.html' %}
+    </ul>
+</div>
+
 
 
 
