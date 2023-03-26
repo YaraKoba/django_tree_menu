@@ -1,0 +1,10 @@
+{% extends 'tree_menu/base.html' %}
+
+{% load menu_tags %}
+
+{% block content %}
+
+{% draw_menu 'main_menu' request %}
+{% draw_menu 'about' request %}
+
+{% endblock %}

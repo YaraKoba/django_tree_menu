@@ -1,0 +1,23 @@
+
+{% for iter in item %}
+    <li class="list-group-item">
+        <a href="{{iter.href}}">{{iter.name}}</a>
+        {% if iter.children %}
+            <a data-bs-toggle="collapse"
+             href="{{iter.href}}"
+             data-bs-target="#{{iter.name}}{{menu}}"
+             aria-controls="{{iter.name}}{{menu}}"
+             {% if iter.is_active %} class="active" {% endif %}>
+              Развернуть
+            </a>
+
+
+            <ul id="{{iter.name}}{{menu}}" class="collapse{% if iter.is_active %} show{% endif %}">
+              {% include 'tree_menu/children.html' with item=iter.children %}
+            </ul>
+      {% endif %}
+    </li>
+{% endfor %}
+
+
+
