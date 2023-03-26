@@ -20,7 +20,7 @@ def render_menu_items(menu_items, path):
     # First pass: create menu items and store them in menu_dict
     for item in menu_items:
         name = item.text
-        url = item.url
+        url = item.slug
         parent = item.parent
         menu_item = {
                     'name': name,

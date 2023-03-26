@@ -2,5 +2,5 @@ from django.urls import path
 from .views import index
 
 urlpatterns = [
-    path('<int:menu_id>/<int:menu_item_id>/', index, name='menu'),
+    path('<slug:menu_slug>/<slug:menu_item_slug>/', index, name='menu'),
 ]
