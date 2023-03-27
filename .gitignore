@@ -123,3 +123,4 @@ dmypy.json
 
 #PyCharm
 .idea/
+test_task/db.sqlite3
