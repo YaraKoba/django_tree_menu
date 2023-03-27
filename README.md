@@ -74,6 +74,6 @@ http://127.0.0.1:8000/admin
 ### Admin login/password
 
 ```commandline
-login: admin
+login: adminadmin
 password: admin
 ```
