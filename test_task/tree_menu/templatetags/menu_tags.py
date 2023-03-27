@@ -14,11 +14,8 @@ def draw_menu(menu, request):
 
 def render_menu_items(menu_items, path):
     menu_tree = []
-
-    # Create a dictionary to store the menu items by name
     menu_dict = {}
 
-    # First pass: create menu items and store them in menu_dict
     for item in menu_items:
         name = item.text
         url = item.slug
@@ -40,7 +37,6 @@ def render_menu_items(menu_items, path):
         if parent is None:
             menu_tree.append(menu_item)
 
-    # Second pass: link child items to their parents
     for item in menu_items:
         name = item.text
         if item.parent:

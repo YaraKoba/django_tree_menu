@@ -3,7 +3,11 @@
 <li class="list-group-item">
     <div class="row row-cols-auto">
         <div class="col">
-            <a type="button" href="{{iter.href}}" role="button" {% if iter.current %} class="btn btn-outline-success active"
+            <a type="button"
+               href="{{iter.href}}"
+               role="button"
+               {% if iter.current %}
+               class="btn btn-outline-success active"
                {% else %}
                class="btn btn-outline-success"
                {% endif %}>
@@ -12,10 +16,13 @@
         </div>
         {% if iter.children %}
         <div class="col">
-            <div data-bs-toggle="collapse" href="{{iter.href}}" data-bs-target="#{{iter.name}}{{menu}}"
-            aria-controls="{{iter.name}}{{menu}}">
-                <a type="button" href="{{iter.href}}" role="button" class="btn btn-outline-secondary"> ↓
-                </a>
+            <div data-bs-toggle="collapse"
+                 href="{{iter.href}}"
+                 data-bs-target="#{{iter.name}}{{menu}}"
+                 aria-controls="{{iter.name}}{{menu}}">
+
+                <a type="button" href="{{iter.href}}" role="button" class="btn btn-outline-secondary"> ↓ </a>
+
             </div>
         </div>
     </div>

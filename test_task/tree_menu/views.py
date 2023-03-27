@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 
 
 def index(request, *args, **kwargs):
@@ -14,4 +14,4 @@ def index(request, *args, **kwargs):
 
 
 def hello_page(request, *args, **kwargs):
-    return render(request, 'example_pages/hello_page.html')
+    return render(request, 'tree_menu/index.html')

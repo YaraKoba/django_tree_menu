@@ -1,3 +1,6 @@
+[![](https://img.shields.io/pypi/pyversions/django-admin-interface.svg?color=3776AB&logo=python&logoColor=white)](https://www.python.org/)
+
+
 # Django-tree-menu
 Test assignment for an interview. Conditions for passing:
 1) the menu is implemented through TemPlate Tag
@@ -22,41 +25,15 @@ Test assignment for an interview. Conditions for passing:
 
 ![update.gif](media%2Fupdate.gif)
 
-## Solutions
-1) To implement the menu using Template Tags in Django, I create
-a custom template tag that fetches 
-the menu items from the database and renders 
-them in the HTML template. This can be done 
-using the `inclusion_tag` decorator provided by Django.
-
-![inclusion_tag.png](media%2Finclusion_tag.png)
-2) to deploy everything on a dedicated point and 
-the first level of investment under it, 
-I use recursion to traverse the tree 
-structure in templates.
-
-![create_children.png](media%2Fcreate_children.png)
-3) To store data in the database, I define Django 
-models and use Django's ORM to interact with the database. Also
-To determine the active menu item based on the URL of the current page,
-I used the `get_url` function in the model and then compare it with 
-the URLs of your menu items.
-
-![models.png](media%2Fmodels.png)
 
 ## Installation
 ```commandline
 git clone git@github.com:YaraKoba/django_tree_menu.git
 ```
-### install requirements
-```commandline
-pip install -r requirements.txt
-```
 
-### make migration
-Change directory to `TestTask`
+### Makefile
 ```commandline
-python manage.py makemigrations
-python manage.py migrate
-python manage.py createsuperuser
+make install_requirements
+make migrate
+make runserver
 ```
