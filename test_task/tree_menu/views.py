@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, reverse
 
 
 def index(request, *args, **kwargs):
@@ -10,6 +10,7 @@ def index(request, *args, **kwargs):
         file = 'example_pages/about.html'
     else:
         file = 'example_pages/any.html'
+
     return render(request, file)
 
 

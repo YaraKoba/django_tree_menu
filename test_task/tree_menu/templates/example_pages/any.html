@@ -1,6 +1,6 @@
 {% extends 'tree_menu/base.html' %}
 {% load menu_tags %}
-
+{% load set_tags %}
 
 {% block content %}
 
@@ -16,6 +16,11 @@
             </div>
         </header>
     </div>
+    {% start_with request '/about' as val %}
+    {% if val %}
+    <div class="col-2">{% draw_menu 'about' request %}</div>
+    {% endif %}
+
 </div>
 
 {% endblock %}

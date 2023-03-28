@@ -4,12 +4,20 @@ from tree_menu.models import *
 register = template.Library()
 
 
+@register.simple_tag
+def starts_with(path, value):
+    return path.startswith(value)
+
+
 @register.inclusion_tag('tree_menu/nav_bar.html')
 def draw_menu(menu, request):
     menu_items = MenuItem.objects.filter(group__name=menu)
     dict_children = render_menu_items(menu_items, request.path)
 
     return {'item': dict_children, 'menu': menu}
+
+
+
 
 
 def render_menu_items(menu_items, path):
