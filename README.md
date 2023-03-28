@@ -35,6 +35,7 @@ Test assignment for an interview. Conditions for passing:
 
 ```commandline
 git clone git@github.com:YaraKoba/django_tree_menu.git
+cd djando_tree_menu
 python -m venv venv
 source venv/bin/activate
 ```
