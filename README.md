@@ -1,7 +1,7 @@
 [![](https://img.shields.io/pypi/pyversions/django-admin-interface.svg?color=3776AB&logo=python&logoColor=white)](https://www.python.org/)
 
 # Django-tree-menu
-1
+## Все делал самостоятельно, лишь взял скелет джанго.
 Test assignment for an interview. Conditions for passing:
 
 1) the menu is implemented through TemPlate Tag
