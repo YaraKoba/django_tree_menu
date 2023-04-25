@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 
 
+# Эта модель для разных групп меню, например: Главное меню, Боковое меню и тд...
 class MenuGroup(models.Model):
     name = models.CharField(max_length=50)
     slug = models.SlugField(max_length=55, unique=True, db_index=True, verbose_name='URL')
@@ -10,6 +11,7 @@ class MenuGroup(models.Model):
         return f'{self.name}'
 
 
+# Модель для компонентов меню и их предков
 class MenuItem(models.Model):
     text = models.CharField(max_length=50)
     slug = models.SlugField(max_length=55, unique=True, db_index=True, verbose_name='URL')
@@ -19,6 +21,7 @@ class MenuItem(models.Model):
     def __str__(self):
         return f'{self.text}, {self.group}'
 
+    # Метод возвращает всех детей компонента
     def get_children(self):
         return ", ".join([child.text for child in self.children.all()])
 
@@ -27,5 +30,6 @@ class MenuItem(models.Model):
     class Meta:
         verbose_name_plural = "Menu Items"
 
+    # Возвращает слаг для компонента, он состоит из двух частей 1. группа, 2. компонент
     def get_url(self):
         return reverse('menu', kwargs={'menu_slug': self.group.slug, 'menu_item_slug': self.slug})

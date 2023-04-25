@@ -11,3 +11,4 @@ runserver:
 migrate:
 	$(DJANGO_MANAGE) makemigrations --settings=$(DJANGO_SETTINGS_MODULE)
 	$(DJANGO_MANAGE) migrate --settings=$(DJANGO_SETTINGS_MODULE)
+
