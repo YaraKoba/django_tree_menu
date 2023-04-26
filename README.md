@@ -1,19 +1,17 @@
 [![](https://img.shields.io/pypi/pyversions/django-admin-interface.svg?color=3776AB&logo=python&logoColor=white)](https://www.python.org/)
 
 # Django-tree-menu
-## Все делал самостоятельно, лишь взял скелет джанго.
-Test assignment for an interview. Conditions for passing:
+`Stack:` `Python` `Django` `PostgreSQL`
+## Все делал самостоятельно, лишь взял скелет Django проекта.
+Вся логика описана в комментариях в коде.
 
-1) the menu is implemented through TemPlate Tag
-2) everything that is on the dedicated point is deployed. The first level of investment under the highlighted point is
-   also deployed.****
-3) stored in the database.
-4) is edited in the standard Django admin panel
-5) the active menu item is determined based on the URL of the current page
-6) There can be several menu on one page. They are determined by name.
-7) When clicking on the menu, there is a transition at the URL specified in it. The URL can be set both in a clear way
-   and through Named URL.
-8) for the drawing of each menu, exactly 1 request to the database is required
+Жду с нетерпением обратную связь
+
+### Важные файлы:
+1) Шаблон с созданием меню `tree_menu/templates/tree_menu/children.html`
+2) Теги, запрос в БД `tree_menu/templatetags/menu_tags.py`
+3) Модели: `tree_menu/models.py`
+
 
 ## Show how it works
 
@@ -51,6 +49,11 @@ make install_requirements
 ```commandline
 make migrate
 ```
+### Run createsuperuser
+
+```commandline
+make createsuperuser
+```
 
 ### Run server
 
@@ -70,11 +73,4 @@ http://127.0.0.1:8000/
 
 ```commandline
 http://127.0.0.1:8000/admin
-```
-
-### Admin panel login/password
-
-```commandline
-login: adminadmin
-password: admin
 ```
